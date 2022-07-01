@@ -1,2 +1,2 @@
-// Multi signature wallet on Ethereum, Solidity language
+// Multi signature wallet on Ethereum, Solidity language 
 
