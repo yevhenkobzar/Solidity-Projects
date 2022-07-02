@@ -1,7 +1,6 @@
-// Multi signature wallet on Ethereum, Solidity language 
-
 pragma solidity 0.7.5;
 pragma abicoder v2;
+
 
 contract Wallet {
     address[] public owners;
@@ -52,6 +51,8 @@ contract Wallet {
     function deposit() public payable {}
 
     function createTransfer(address payable _recipient, uint _amount) public onlyOwners {
+        require(address(this).balance >= _amount, "Balance is not sufficient");
+
         transferRequests.push(Transfer(_recipient, false, 0, _amount, transferRequests.length));
     }
 
@@ -74,7 +75,10 @@ contract Wallet {
     function getTransferRequests() public view returns (Transfer[] memory){
         return transferRequests;
     }
+
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
+    }
     
 
 }
-
