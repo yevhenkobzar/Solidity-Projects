@@ -4,7 +4,7 @@ import "./safemath.sol";
 
 /**
  * @title ERC20 standard token implementation.
- * @dev Standard ERC20 token. This contract follows the implementation at https://goo.gl/mLbAPJ.
+ * @dev Standard ERC20 token.
  */
 contract Token {
 
